@@ -1,0 +1,29 @@
+{
+  "name": "backend",
+  "proxy": "http://localhost:8081",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-frontend": "npm run --prefix ../frontend build && rm -Rf public && cp -R ../frontend/build public",
+    "deploy": "git add .. && git commit && cd .. && git subtree push --prefix backend heroku main",
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "nodemon": "^2.0.22",
+    "pg": "^8.11.0",
+    "sequelize": "^6.31.1",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "heroku": "^8.1.3"
+  }
+}

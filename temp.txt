@@ -1,0 +1,14 @@
+CREATE TABLE `Profiles` (`id` INTEGER PRIMARY KEY AUTOINCRE
+MENT, `nickname` VARCHAR(255) NOT NULL UNIQUE, `name` VARCH
+AR(255) NOT NULL, `lastname` VARCHAR(255) NOT NULL, `age` I
+NTEGER);
+
+
+CREATE TABLE Posts (id serial PRIMARY KEY, post text NOT NULL, profile INTEGER REFERENCES Profiles (id));
+
+CREATE TABLE Profiles (id serial PRIMARY KEY, nickname text NOT NULL UNIQUE, name text NOT NULL, lastname text NOT NULL, age INTEGER);
+
+INSERT INTO Profiles (nickname, name, lastname, age) VALUES ('hinjo', 'Vanja', 'F', 38);
+
+INSERT INTO Posts (post, profile) VALUES ('what a day', 1);
+
